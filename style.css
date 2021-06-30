@@ -46,9 +46,9 @@
 }
 
 @media screen and (min-width: 1024px){
-    section {
+    .top-row, .bottom-row {
         display: grid; 
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 50% 50%; 
         grid-template-rows: 50% 50%; 
         gap: 0px 0px; 
         grid-template-areas: 
