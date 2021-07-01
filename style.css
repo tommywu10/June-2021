@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
+/*--------CONTAINER----------*/
+
+
 .container {
     margin: 0;
 }
@@ -12,15 +19,21 @@
 .container img{
     width: 100%;
     display: block;
+    object-fit: cover;
 }
+
+
+/*-------- TEXT CONTAINER----------*/
 
 .text-container {
     height: 200px;
+    width: 100%;
     margin: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     font-family: Roboto;
+    
 }
 
 .text-container h1 {
@@ -45,23 +58,37 @@
     
 }
 
+
+/*--------MEDIA QUERY----------*/
+
 @media screen and (min-width: 1024px){
     .top-row, .bottom-row {
-        display: grid; 
-        grid-template-columns: 50% 50%; 
-        grid-template-rows: 50% 50%; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          ". ."
-          ". ."; 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 400px);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
     }
-
+    
+        /*--------MQ TEXT CONTAINER----------*/
     .text-container {
         width: 100%;
         margin: 0;
-        padding: 0 0 0 25px;
     }
 
+    .text-container h1, p , button {
+       margin: 0 0 0 25px;
+    } 
+
+    .text-container button {
+        width: 150px;
+    }
+
+    .bottom-row .text-container{
+        order: 1;
+    }
+    
+        /*--------MQ CONTAINER----------*/
     .container {
         width: 100%;
     }
@@ -69,12 +96,11 @@
     .container img {
         width: 100%;
     }
+    
 
     .bottom-row .container, .top-row .container {
         display: flex; 
     }
 
-    .bottom-row .text-container{
-        order: 1;
-    }
+    
 }
